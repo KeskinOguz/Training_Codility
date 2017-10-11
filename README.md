@@ -1,5 +1,3 @@
 # Training_Codility
 
-Language: Javascript
-
-This branch contain codility problem solutions using Javascript..
+This branch contain codility problem solutions with 100% correctness and performance
