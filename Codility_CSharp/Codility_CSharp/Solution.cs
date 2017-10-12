@@ -14,35 +14,50 @@ namespace Codility_CSharp
 
             var binary = Convert.ToString(N, 2);
 
-            while (binary.Length > 0) {
+            while (binary.Length > 0)
+            {
 
                 var lenght = HelperMethods.GetStringBetweenCharacters(binary, '1', '1').Length;
                 if (lenght > result) result = lenght;
                 if (binary.IndexOf('1') == -1) break;
                 binary = binary.Remove(0, binary.IndexOf('1') + 1);
-                 
+
             }
+
 
             return result;
         }
 
+        //Correctness: %100
+        //Performance: %25
+        //needs "slight" improvements :)
         public static int lesson_2_task_1(int[] A)
         {
+            int result = 0;
+            bool match;
 
-            var dict = new Dictionary<int, int>();
-            foreach (var num in A)
+            for (int i = 0; i < A.Length; i++)
             {
-                if (!dict.ContainsKey(num))
+                if (A[i] == int.MaxValue)
+                    continue;
+
+                match = false;
+                for (int j = i + 1; j < A.Length; j++)
                 {
-                    dict.Add(num, 0);
+                    if (A[i] == A[j])
+                    {
+                        A[i] = A[j] = int.MaxValue;
+                        match = true;
+                        break;
+                    }
                 }
-                dict[num]++;
+                if (!match)
+                {
+                    result = A[i];
+                    break;
+                }
             }
-
-            var item = dict.First(x => x.Value % 2 == 1);
-
-            return item.Key;
+            return result;
         }
-       
     }
 }
