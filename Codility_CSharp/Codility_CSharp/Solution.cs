@@ -31,7 +31,7 @@ namespace Codility_CSharp
         //Correctness: %100
         //Performance: %25
         //needs "slight" improvements :)
-        public static int lesson_2_task_1(int[] A)
+        public static int lesson_2_task_1_attempt(int[] A)
         {
             int result = 0;
             bool match;
@@ -58,6 +58,21 @@ namespace Codility_CSharp
                 }
             }
             return result;
+        }
+        public static int lesson_2_task_1(int[] A)
+        {
+            var dict = new Dictionary<int, int>();
+
+            foreach (var item in A)
+            {
+                if (!dict.ContainsKey(item))
+                {
+                    dict.Add(item, 0);
+                }
+                dict[item]++;
+            }
+
+            return dict.FirstOrDefault(x => x.Value % 2 == 1).Key;
         }
     }
 }
