@@ -8,8 +8,8 @@ namespace Codility_CSharp
 {
     public class Solution
     {
-        public static int lesson_1_task_1(int N) {
-
+        public static int lesson_1_task_1(int N)
+        {
             var result = 0;
 
             var binary = Convert.ToString(N, 2);
@@ -23,10 +23,26 @@ namespace Codility_CSharp
                  
             }
 
-
             return result;
         }
 
+        public static int lesson_2_task_1(int[] A)
+        {
+
+            var dict = new Dictionary<int, int>();
+            foreach (var num in A)
+            {
+                if (!dict.ContainsKey(num))
+                {
+                    dict.Add(num, 0);
+                }
+                dict[num]++;
+            }
+
+            var item = dict.First(x => x.Value % 2 == 1);
+
+            return item.Key;
+        }
        
     }
 }
