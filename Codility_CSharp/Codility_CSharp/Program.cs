@@ -11,8 +11,8 @@ namespace Codility_CSharp
     {
         static void Main(string[] args)
         {
-            int[] arr = { 9, 3, 9, 3, 9, 7, 9 };
-           Console.WriteLine(Solution.lesson_2_task_1(arr).ToString());
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            Console.WriteLine(Solution.lesson_2_task_2(arr, 3).ToString());
 
             Console.ReadKey();
         }
