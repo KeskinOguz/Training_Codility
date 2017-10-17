@@ -103,5 +103,33 @@ namespace Codility_CSharp
             }
             return result;
         }
+        
+        //Lesson 3 Task 1
+        //Correctness 100%
+        //Performance 100%
+        public static int lesson_3_task_1(int[] A)
+        {
+            int result = int.MaxValue;
+            int sum = 0;
+            int sumLeft = 0;
+            int sumRight = 0;
+            int diff = 0;
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                sum += A[i];
+            }
+            sumRight = sum;
+
+            for (int i = 0; i < A.Length - 1; i++)
+            {
+                sumLeft += A[i];
+                sumRight -= A[i];
+                diff = Math.Abs(sumLeft - sumRight);
+                if (diff < result)
+                    result = diff;
+            }
+            return result;
+        }
     }
 }
