@@ -8,7 +8,7 @@ namespace Codility_CSharp
 {
     public class Solution
     {
-        //Lesson 1
+        //Lesson 1 Task 1 (BinaryGap)
         //Correctness: %100
         public static int lesson_1_task_1(int N)
         {
@@ -30,39 +30,7 @@ namespace Codility_CSharp
             return result;
         }
 
-        //Lesson 2 Task 1
-        //Correctness: %100
-        //Performance: %25
-        public static int lesson_2_task_1_attempt(int[] A)
-        {
-            int result = 0;
-            bool match;
-
-            for (int i = 0; i < A.Length; i++)
-            {
-                if (A[i] == int.MaxValue)
-                    continue;
-
-                match = false;
-                for (int j = i + 1; j < A.Length; j++)
-                {
-                    if (A[i] == A[j])
-                    {
-                        A[i] = A[j] = int.MaxValue;
-                        match = true;
-                        break;
-                    }
-                }
-                if (!match)
-                {
-                    result = A[i];
-                    break;
-                }
-            }
-            return result;
-        }
-
-        //Lesson 2 Task 1
+        //Lesson 2 Task 1 (OddOccurrencesInArray)
         //Correctness: %100
         //Performance: %100
         public static int lesson_2_task_1(int[] A)
@@ -81,7 +49,7 @@ namespace Codility_CSharp
             return dict.FirstOrDefault(x => x.Value % 2 == 1).Key;
         }
 
-        //Lesson 2 Task 2
+        //Lesson 2 Task 2 (CyclicRotation)
         //Correctness %100
         public static int[] lesson_2_task_2(int[] A, int K)
         {
@@ -103,8 +71,8 @@ namespace Codility_CSharp
             }
             return result;
         }
-        
-        //Lesson 3 Task 1
+
+        //Lesson 3 Task 2 (TapeEquilibrium)
         //Correctness 100%
         //Performance 100%
         public static int lesson_3_task_1(int[] A)
