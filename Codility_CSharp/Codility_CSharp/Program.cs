@@ -11,8 +11,8 @@ namespace Codility_CSharp
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine(Solution.lesson_3_task_3(10,80,30));
+            int[] a = { 2 };
+            Console.WriteLine(Solution.lesson_3_task_1(a));
 
             Console.ReadKey();
         }

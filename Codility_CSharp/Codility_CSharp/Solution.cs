@@ -71,7 +71,24 @@ namespace Codility_CSharp
             }
             return result;
         }
+        //Lesson 3 Task 1 (PermMissingElem)
+        //Correctness 100%
+        //Performance 100%
+        public static int lesson_3_task_1(int[] A)
+        {
+            Array.Sort(A);
+            if (A.Length == 0 || A[0] != 1) return 1;
+            else {
+                
+                for (int i = 1; i < A.Length; i++)
+                {
+                    if (A[i] - A[i - 1] > 1) return A[i] - 1;
 
+                }
+            }
+
+            return A[A.Length - 1] + 1;
+        }
         //Lesson 3 Task 2 (TapeEquilibrium)
         //Correctness 100%
         //Performance 100%
@@ -111,5 +128,6 @@ namespace Codility_CSharp
 
             return (int)result;
         }
+
     }
 }
