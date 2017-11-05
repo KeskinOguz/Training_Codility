@@ -75,7 +75,7 @@ namespace Codility_CSharp
         //Lesson 3 Task 2 (TapeEquilibrium)
         //Correctness 100%
         //Performance 100%
-        public static int lesson_3_task_1(int[] A)
+        public static int lesson_3_task_2(int[] A)
         {
             int result = int.MaxValue;
             int sum = 0;
@@ -98,6 +98,18 @@ namespace Codility_CSharp
                     result = diff;
             }
             return result;
+        }
+        //Lesson 3 Task 3 (FrogJump)
+        //Correctness 100%
+        //Performance 100%
+        public static int lesson_3_task_3(int X, int Y, int D)
+        {
+            double result = 0;
+            double distance = Y - X;
+
+            result = Math.Ceiling(distance / D);
+
+            return (int)result;
         }
     }
 }
