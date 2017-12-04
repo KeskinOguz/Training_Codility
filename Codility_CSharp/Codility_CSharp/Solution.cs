@@ -153,5 +153,35 @@ namespace Codility_CSharp
             }
             return 1;
         }
+
+        //Lesson 4 Task 2 (FrogRiverOne)
+        //Correctness 100%
+        //Performance 100%
+        public static int lesson_4_task_2(int[] A, int X)
+        {
+                int result = -1;
+                Dictionary<int, bool> positions = new Dictionary<int, bool>();
+
+                for (int i = 1; i <= X; i++)
+                {
+                    positions.Add(i, false);
+                }
+
+                int count = X;
+                for (int i = 0; i < A.Length; i++)
+                {
+                    if (positions[A[i]] == false)
+                    {
+                        positions[A[i]] = true;
+                        count--;
+                    }
+                    if (count == 0)
+                    {
+                        result = i;
+                        break;
+                    }
+                }
+                return result;
+        }
     }
 }
